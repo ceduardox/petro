@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetroSphere | Dashboard</title>
+    <meta
+      name="description"
+      content="Your PetroSphere account and subscription status."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="product-page">
+    <div class="page-glow page-glow-one"></div>
+    <div class="page-glow page-glow-two"></div>
+
+    <main class="subpage-main" data-dashboard-root>
+      <section class="section product-hero">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Dashboard</p>
+            <h2>Your account, billing state and current subscription status.</h2>
+          </div>
+
+          <div class="purchase-panel" data-dashboard-guest hidden>
+            <div class="purchase-copy">
+              <p class="eyebrow">Login Required</p>
+              <h2>No active session was found.</h2>
+              <p>
+                Create your account or sign in first, then come back here to
+                see your subscription state.
+              </p>
+            </div>
+
+            <div class="checkout-actions">
+              <a class="button button-primary" href="auth.html?next=%2Fdashboard.html">Open Login / Signup</a>
+              <a class="button button-secondary" href="index.html#packages">See Pricing</a>
+            </div>
+          </div>
+
+          <div data-dashboard-user hidden>
+            <div class="product-spec-grid">
+              <article class="spec-panel">
+                <h3>Account</h3>
+                <ul class="spec-list">
+                  <li><span class="spec-label">Name</span><span class="spec-value" data-dashboard-field="name">-</span></li>
+                  <li><span class="spec-label">Email</span><span class="spec-value" data-dashboard-field="email">-</span></li>
+                  <li><span class="spec-label">Stripe customer</span><span class="spec-value" data-dashboard-field="customer">-</span></li>
+                </ul>
+              </article>
+
+              <article class="spec-panel">
+                <h3>Subscription</h3>
+                <ul class="spec-list">
+                  <li><span class="spec-label">Plan</span><span class="spec-value" data-dashboard-field="plan">No subscription</span></li>
+                  <li><span class="spec-label">Status</span><span class="spec-value" data-dashboard-field="status">-</span></li>
+                  <li><span class="spec-label">Renews / ends</span><span class="spec-value" data-dashboard-field="periodEnd">-</span></li>
+                  <li><span class="spec-label">Cancel at period end</span><span class="spec-value" data-dashboard-field="cancelAtPeriodEnd">-</span></li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="purchase-panel">
+              <div class="purchase-copy">
+                <p class="eyebrow">Billing Actions</p>
+                <h2>Manage your current plan or start a new one.</h2>
+                <p>
+                  If your Stripe customer exists, you can open the billing
+                  portal directly from here. Otherwise choose a plan and finish
+                  checkout first.
+                </p>
+              </div>
+
+              <div class="checkout-actions">
+                <button class="button button-primary" type="button" data-billing-portal-button>
+                  Open Billing Portal
+                </button>
+                <a class="button button-secondary" href="pro.html">Buy or Upgrade Plan</a>
+                <button class="button button-ghost" type="button" data-logout-button>
+                  Log Out
+                </button>
+                <p class="checkout-note" data-dashboard-message></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

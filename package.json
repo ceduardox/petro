@@ -1,0 +1,17 @@
+{
+  "name": "petrosphere-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PetroSphere marketing site with simple Stripe backend for Railway.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "pg": "^8.12.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

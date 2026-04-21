@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetroSphere | Checkout Canceled</title>
+    <meta
+      name="description"
+      content="Your PetroSphere checkout was canceled."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="product-page">
+    <div class="page-glow page-glow-one"></div>
+    <div class="page-glow page-glow-two"></div>
+
+    <main class="subpage-main">
+      <section class="section product-hero">
+        <div class="container">
+          <div class="purchase-panel">
+            <div class="purchase-copy">
+              <p class="eyebrow">Checkout Canceled</p>
+              <h2>The checkout was canceled before payment completed.</h2>
+              <p>
+                Selected plan:
+                <strong data-query-param="plan" data-fallback="not provided"></strong>.
+                You can return to the product page and try again whenever you
+                want.
+              </p>
+            </div>
+
+            <div class="checkout-actions">
+              <a class="button button-primary" href="index.html#packages">Back to Pricing</a>
+              <a class="button button-secondary" href="auth.html">Open Login / Signup</a>
+              <p class="checkout-note">
+                If Stripe returns here too often, review the live keys, domain
+                URLs and webhook settings in Railway.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

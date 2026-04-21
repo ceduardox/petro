@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetroSphere | Payment Successful</title>
+    <meta
+      name="description"
+      content="Your PetroSphere payment was successful."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="product-page">
+    <div class="page-glow page-glow-one"></div>
+    <div class="page-glow page-glow-two"></div>
+
+    <main class="subpage-main">
+      <section class="section product-hero">
+        <div class="container">
+          <div class="purchase-panel">
+            <div class="purchase-copy">
+              <p class="eyebrow">Payment Successful</p>
+              <h2>Your Stripe Checkout completed successfully.</h2>
+              <p>
+                Your session reference is
+                <strong data-query-param="session_id" data-fallback="pending confirmation"></strong>.
+                If you're deploying this as a SaaS, the next step is connecting
+                the webhook to your user and subscription records.
+              </p>
+            </div>
+
+            <div class="checkout-actions">
+              <a class="button button-primary" href="dashboard.html">Open Dashboard</a>
+              <a class="button button-secondary" href="index.html">Back to Home</a>
+              <p class="checkout-note">
+                On Railway, this page works immediately after Checkout returns
+                to your deployed domain.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

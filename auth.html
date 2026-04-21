@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetroSphere | Account Access</title>
+    <meta
+      name="description"
+      content="Create your PetroSphere account or sign in before starting a subscription."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="product-page">
+    <div class="page-glow page-glow-one"></div>
+    <div class="page-glow page-glow-two"></div>
+
+    <main class="subpage-main">
+      <section class="section product-hero">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Account Access</p>
+            <h2>Create an account or sign in before starting checkout.</h2>
+          </div>
+
+          <div class="product-spec-grid">
+            <article class="spec-panel">
+              <h3>Create Account</h3>
+              <p class="spec-help">
+                Use a real email because the subscription will be linked to this
+                account and used later for billing access.
+              </p>
+
+              <form class="auth-form" data-auth-form="register">
+                <label class="form-field">
+                  <span>Name</span>
+                  <input type="text" name="name" placeholder="Your name" required />
+                </label>
+                <label class="form-field">
+                  <span>Email</span>
+                  <input type="email" name="email" placeholder="you@company.com" required />
+                </label>
+                <label class="form-field">
+                  <span>Password</span>
+                  <input type="password" name="password" placeholder="Minimum 8 characters" required />
+                </label>
+                <button class="button button-primary" type="submit">Create Account</button>
+                <p class="form-message" data-form-message></p>
+              </form>
+            </article>
+
+            <article class="spec-panel">
+              <h3>Sign In</h3>
+              <p class="spec-help">
+                If you already created your account, sign in and go straight to
+                the product pages to complete checkout.
+              </p>
+
+              <form class="auth-form" data-auth-form="login">
+                <label class="form-field">
+                  <span>Email</span>
+                  <input type="email" name="email" placeholder="you@company.com" required />
+                </label>
+                <label class="form-field">
+                  <span>Password</span>
+                  <input type="password" name="password" placeholder="Your password" required />
+                </label>
+                <button class="button button-secondary" type="submit">Sign In</button>
+                <p class="form-message" data-form-message></p>
+              </form>
+            </article>
+          </div>
+
+          <div class="purchase-panel">
+            <div class="purchase-copy">
+              <p class="eyebrow">Next Step</p>
+              <h2>After login, go back to your plan page and the Stripe checkout will work.</h2>
+              <p>
+                If you arrived here from a checkout attempt, the app will return
+                you to the requested page automatically.
+              </p>
+            </div>
+
+            <div class="checkout-actions">
+              <a class="button button-primary" href="starter.html">Open Starter</a>
+              <a class="button button-secondary" href="pro.html">Open Pro</a>
+              <a class="button button-ghost" href="enterprise.html">Open Enterprise</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

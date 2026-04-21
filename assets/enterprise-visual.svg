@@ -1,0 +1,55 @@
+<svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="640" rx="40" fill="url(#bg)"/>
+  <rect x="52" y="48" width="856" height="544" rx="34" fill="#FCFEFF" stroke="#D9E5F4"/>
+  <rect x="52" y="48" width="856" height="72" rx="34" fill="#F3F8FD"/>
+  <text x="684" y="92" fill="#0A1630" font-family="Arial, sans-serif" font-size="28" font-weight="700">Enterprise</text>
+
+  <rect x="88" y="152" width="300" height="182" rx="24" fill="#FFFFFF" stroke="#E2EAF5"/>
+  <text x="116" y="192" fill="#0A1630" font-family="Arial, sans-serif" font-size="22" font-weight="700">Multi-Asset Control</text>
+  <text x="116" y="220" fill="#5E7197" font-family="Arial, sans-serif" font-size="15">Teams, basins and permissions</text>
+  <circle cx="168" cy="270" r="22" fill="#EAFFF0" stroke="#BDE8C8"/>
+  <circle cx="242" cy="246" r="22" fill="#EEF5FF" stroke="#D7E5F6"/>
+  <circle cx="302" cy="290" r="22" fill="#EEF5FF" stroke="#D7E5F6"/>
+  <path d="M190 270H220" stroke="#1FB21B" stroke-width="6" stroke-linecap="round"/>
+  <path d="M264 246L282 270" stroke="#1FB21B" stroke-width="6" stroke-linecap="round"/>
+  <path d="M242 268L284 290" stroke="#1FB21B" stroke-width="6" stroke-linecap="round"/>
+  <text x="150" y="320" fill="#5E7197" font-family="Arial, sans-serif" font-size="14">asset A</text>
+  <text x="224" y="214" fill="#5E7197" font-family="Arial, sans-serif" font-size="14">asset B</text>
+  <text x="286" y="330" fill="#5E7197" font-family="Arial, sans-serif" font-size="14">asset C</text>
+
+  <rect x="412" y="152" width="228" height="182" rx="24" fill="#FFFFFF" stroke="#E2EAF5"/>
+  <text x="440" y="192" fill="#0A1630" font-family="Arial, sans-serif" font-size="22" font-weight="700">Security Layer</text>
+  <text x="440" y="220" fill="#5E7197" font-family="Arial, sans-serif" font-size="15">SSO, audit trail, access rules</text>
+  <path d="M526 246L472 268V316C472 350 494 374 526 384C558 374 580 350 580 316V268L526 246Z" fill="#EAFFF0" stroke="#1FB21B" stroke-width="6"/>
+  <path d="M504 314L520 330L552 294" stroke="#1FB21B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="664" y="152" width="208" height="182" rx="24" fill="#FFFFFF" stroke="#E2EAF5"/>
+  <text x="692" y="192" fill="#0A1630" font-family="Arial, sans-serif" font-size="22" font-weight="700">Deployment</text>
+  <rect x="692" y="224" width="152" height="18" rx="9" fill="#EAFFF0"/>
+  <rect x="692" y="258" width="118" height="14" rx="7" fill="#DCE6F3"/>
+  <rect x="692" y="286" width="142" height="14" rx="7" fill="#DCE6F3"/>
+  <rect x="692" y="314" width="128" height="14" rx="7" fill="#DCE6F3"/>
+  <text x="696" y="238" fill="#1FB21B" font-family="Arial, sans-serif" font-size="14" font-weight="700">private cloud / on-prem</text>
+
+  <rect x="88" y="362" width="784" height="194" rx="24" fill="#FFFFFF" stroke="#E2EAF5"/>
+  <text x="116" y="402" fill="#0A1630" font-family="Arial, sans-serif" font-size="22" font-weight="700">Connector Fabric</text>
+  <text x="116" y="430" fill="#5E7197" font-family="Arial, sans-serif" font-size="15">Internal systems, historians and data exports</text>
+  <rect x="118" y="464" width="142" height="56" rx="18" fill="#F4F8FD"/>
+  <text x="150" y="498" fill="#0A1630" font-family="Arial, sans-serif" font-size="20" font-weight="700">SQL</text>
+  <rect x="292" y="464" width="142" height="56" rx="18" fill="#F4F8FD"/>
+  <text x="318" y="498" fill="#0A1630" font-family="Arial, sans-serif" font-size="20" font-weight="700">Historian</text>
+  <rect x="466" y="464" width="142" height="56" rx="18" fill="#F4F8FD"/>
+  <text x="498" y="498" fill="#0A1630" font-family="Arial, sans-serif" font-size="20" font-weight="700">API</text>
+  <rect x="640" y="464" width="202" height="56" rx="18" fill="#EAFFF0" stroke="#BDE8C8"/>
+  <text x="668" y="498" fill="#1FB21B" font-family="Arial, sans-serif" font-size="20" font-weight="700">PetroSphere Core</text>
+  <path d="M260 492H292" stroke="#5A8FFF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M434 492H466" stroke="#5A8FFF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M608 492H640" stroke="#5A8FFF" stroke-width="6" stroke-linecap="round"/>
+
+  <defs>
+    <linearGradient id="bg" x1="72" y1="16" x2="930" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFF6FF"/>
+      <stop offset="1" stop-color="#F5FFF5"/>
+    </linearGradient>
+  </defs>
+</svg>

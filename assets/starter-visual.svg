@@ -1,0 +1,57 @@
+<svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="640" rx="40" fill="url(#bg)"/>
+  <rect x="64" y="56" width="832" height="528" rx="30" fill="#FCFEFF" stroke="#D9E5F4"/>
+  <rect x="64" y="56" width="832" height="68" rx="30" fill="#F4F8FD"/>
+  <circle cx="106" cy="90" r="8" fill="#91A8CC"/>
+  <circle cx="134" cy="90" r="8" fill="#C0D1E8"/>
+  <circle cx="162" cy="90" r="8" fill="#DDE7F4"/>
+  <text x="726" y="96" fill="#0A1630" font-family="Arial, sans-serif" font-size="28" font-weight="700">Starter</text>
+
+  <rect x="96" y="148" width="180" height="396" rx="24" fill="#F5FAFF"/>
+  <rect x="120" y="182" width="132" height="14" rx="7" fill="#D9E5F4"/>
+  <rect x="120" y="220" width="100" height="56" rx="18" fill="#EAFFF0" stroke="#BDE8C8"/>
+  <text x="144" y="255" fill="#1FB21B" font-family="Arial, sans-serif" font-size="28" font-weight="700">25</text>
+  <text x="186" y="255" fill="#5E7197" font-family="Arial, sans-serif" font-size="14">wells</text>
+  <rect x="120" y="298" width="100" height="56" rx="18" fill="#F4F8FD"/>
+  <text x="144" y="333" fill="#0A1630" font-family="Arial, sans-serif" font-size="28" font-weight="700">2</text>
+  <text x="166" y="333" fill="#5E7197" font-family="Arial, sans-serif" font-size="14">seats</text>
+  <rect x="120" y="378" width="132" height="12" rx="6" fill="#D9E5F4"/>
+  <rect x="120" y="406" width="100" height="12" rx="6" fill="#D9E5F4"/>
+  <rect x="120" y="434" width="112" height="12" rx="6" fill="#D9E5F4"/>
+
+  <rect x="304" y="148" width="280" height="162" rx="24" fill="#FFFFFF" stroke="#E2EAF5"/>
+  <text x="332" y="190" fill="#0A1630" font-family="Arial, sans-serif" font-size="22" font-weight="700">Production Dashboard</text>
+  <text x="332" y="220" fill="#5E7197" font-family="Arial, sans-serif" font-size="15">Rate trend and field surveillance</text>
+  <rect x="332" y="244" width="224" height="2" fill="#E3EBF6"/>
+  <path d="M340 278C366 278 370 240 398 240C426 240 432 300 458 300C486 300 493 252 520 252C546 252 556 286 580 286" stroke="#1FB21B" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="398" cy="240" r="8" fill="#1FB21B"/>
+  <circle cx="458" cy="300" r="8" fill="#1FB21B"/>
+  <circle cx="520" cy="252" r="8" fill="#1FB21B"/>
+
+  <rect x="612" y="148" width="252" height="162" rx="24" fill="#FFFFFF" stroke="#E2EAF5"/>
+  <text x="640" y="190" fill="#0A1630" font-family="Arial, sans-serif" font-size="22" font-weight="700">Decline Curve</text>
+  <text x="640" y="220" fill="#5E7197" font-family="Arial, sans-serif" font-size="15">Arps and Duong cases</text>
+  <path d="M644 284H828" stroke="#E3EBF6" stroke-width="2"/>
+  <path d="M652 278C670 220 704 214 742 238C780 262 800 294 828 310" stroke="#5A8FFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M652 278C676 248 712 246 752 266C788 284 806 298 828 318" stroke="#1FB21B" stroke-width="8" stroke-linecap="round" stroke-dasharray="14 14"/>
+
+  <rect x="304" y="338" width="560" height="206" rx="24" fill="#FFFFFF" stroke="#E2EAF5"/>
+  <text x="332" y="378" fill="#0A1630" font-family="Arial, sans-serif" font-size="22" font-weight="700">Weekly Report Pack</text>
+  <text x="332" y="408" fill="#5E7197" font-family="Arial, sans-serif" font-size="15">PDF export and asset summary</text>
+  <rect x="332" y="438" width="160" height="72" rx="20" fill="#F4F8FD"/>
+  <text x="360" y="478" fill="#0A1630" font-family="Arial, sans-serif" font-size="24" font-weight="700">Oil</text>
+  <text x="360" y="504" fill="#5E7197" font-family="Arial, sans-serif" font-size="15">2,450 bopd</text>
+  <rect x="520" y="438" width="160" height="72" rx="20" fill="#F4F8FD"/>
+  <text x="548" y="478" fill="#0A1630" font-family="Arial, sans-serif" font-size="24" font-weight="700">Gas</text>
+  <text x="548" y="504" fill="#5E7197" font-family="Arial, sans-serif" font-size="15">11.8 MMscfd</text>
+  <rect x="708" y="438" width="128" height="72" rx="20" fill="#EAFFF0" stroke="#BDE8C8"/>
+  <text x="736" y="478" fill="#1FB21B" font-family="Arial, sans-serif" font-size="24" font-weight="700">PDF</text>
+  <text x="726" y="504" fill="#5E7197" font-family="Arial, sans-serif" font-size="15">ready export</text>
+
+  <defs>
+    <linearGradient id="bg" x1="80" y1="24" x2="900" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF5FF"/>
+      <stop offset="1" stop-color="#F7FCF7"/>
+    </linearGradient>
+  </defs>
+</svg>
