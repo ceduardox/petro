@@ -14,6 +14,8 @@ const COOKIE_NAME = "petrosphere_session";
 const SESSION_DURATION_MS = 1000 * 60 * 60 * 24 * 30;
 const DATABASE_URL = process.env.DATABASE_URL || "";
 const SESSION_SECRET = process.env.SESSION_SECRET || "";
+let databaseReady = false;
+let databaseInitError = "";
 
 const ROUTE_ALIASES = {
   "/": "/index.html",
@@ -150,7 +152,9 @@ const server = http.createServer(async (req, res) => {
     if (pathname === "/api/health" && req.method === "GET") {
       return sendJson(res, 200, {
         ok: true,
-        db: Boolean(pool),
+        dbConfigured: Boolean(pool),
+        dbReady: isDatabaseAvailable(),
+        dbError: databaseInitError || null,
       });
     }
 
@@ -171,7 +175,16 @@ async function start() {
   if (!pool) {
     console.warn("DATABASE_URL is not configured. Auth and subscription storage will not work.");
   } else {
-    await initializeDatabase();
+    try {
+      await initializeDatabase();
+      databaseReady = true;
+    } catch (error) {
+      databaseInitError = getErrorMessage(error);
+      console.error(
+        "Database initialization failed. The app will start, but auth and subscription features will stay disabled until DATABASE_URL is fixed.",
+        error
+      );
+    }
   }
 
   server.listen(PORT, () => {
@@ -180,8 +193,8 @@ async function start() {
 }
 
 async function handleGetCurrentUser(req, res) {
-  if (!pool) {
-    return sendJson(res, 500, { error: "DATABASE_URL is not configured." });
+  if (!isDatabaseAvailable()) {
+    return sendJson(res, 500, { error: getDatabaseUnavailableMessage() });
   }
 
   const auth = await getAuthenticatedUser(req);
@@ -199,7 +212,7 @@ async function handleGetCurrentUser(req, res) {
 }
 
 async function handleRegister(req, res) {
-  if (!assertServerAuthConfig(res) || !pool) {
+  if (!assertServerAuthConfig(res)) {
     return;
   }
 
@@ -238,7 +251,7 @@ async function handleRegister(req, res) {
 }
 
 async function handleLogin(req, res) {
-  if (!assertServerAuthConfig(res) || !pool) {
+  if (!assertServerAuthConfig(res)) {
     return;
   }
 
@@ -278,8 +291,8 @@ async function handleLogin(req, res) {
 }
 
 async function handleLogout(req, res) {
-  if (!pool) {
-    return sendJson(res, 500, { error: "DATABASE_URL is not configured." });
+  if (!isDatabaseAvailable()) {
+    return sendJson(res, 500, { error: getDatabaseUnavailableMessage() });
   }
 
   const cookies = parseCookies(req);
@@ -294,8 +307,8 @@ async function handleLogout(req, res) {
 }
 
 async function handleCreateCheckoutSession(req, res) {
-  if (!pool) {
-    return sendJson(res, 500, { error: "DATABASE_URL is not configured." });
+  if (!isDatabaseAvailable()) {
+    return sendJson(res, 500, { error: getDatabaseUnavailableMessage() });
   }
 
   if (!process.env.STRIPE_SECRET_KEY) {
@@ -374,8 +387,8 @@ async function handleCreateCheckoutSession(req, res) {
 }
 
 async function handleCreateBillingPortalSession(req, res) {
-  if (!pool) {
-    return sendJson(res, 500, { error: "DATABASE_URL is not configured." });
+  if (!isDatabaseAvailable()) {
+    return sendJson(res, 500, { error: getDatabaseUnavailableMessage() });
   }
 
   if (!process.env.STRIPE_SECRET_KEY) {
@@ -410,8 +423,8 @@ async function handleCreateBillingPortalSession(req, res) {
 }
 
 async function handleStripeWebhook(req, res) {
-  if (!pool) {
-    return sendJson(res, 500, { error: "DATABASE_URL is not configured." });
+  if (!isDatabaseAvailable()) {
+    return sendJson(res, 500, { error: getDatabaseUnavailableMessage() });
   }
 
   if (!process.env.STRIPE_WEBHOOK_SECRET) {
@@ -541,7 +554,7 @@ async function registerStripeEvent(event) {
 }
 
 async function getAuthenticatedUser(req) {
-  if (!pool) {
+  if (!isDatabaseAvailable()) {
     return { user: null };
   }
 
@@ -917,8 +930,8 @@ function safeCompare(expected, candidate) {
 }
 
 function assertServerAuthConfig(res) {
-  if (!pool) {
-    sendJson(res, 500, { error: "DATABASE_URL is not configured." });
+  if (!isDatabaseAvailable()) {
+    sendJson(res, 500, { error: getDatabaseUnavailableMessage() });
     return false;
   }
 
@@ -933,6 +946,22 @@ function assertServerAuthConfig(res) {
 function shouldUseSsl() {
   const value = String(process.env.DATABASE_SSL || "").toLowerCase();
   return value === "1" || value === "true";
+}
+
+function isDatabaseAvailable() {
+  return Boolean(pool) && databaseReady;
+}
+
+function getDatabaseUnavailableMessage() {
+  if (!pool) {
+    return "DATABASE_URL is not configured.";
+  }
+
+  if (databaseInitError) {
+    return `Database connection failed: ${databaseInitError}`;
+  }
+
+  return "Database is not ready.";
 }
 
 function isHttpsCookie() {
@@ -967,4 +996,16 @@ function loadEnvFile(filePath) {
       process.env[key] = value;
     }
   }
+}
+
+function getErrorMessage(error) {
+  if (!error) {
+    return "Unknown error";
+  }
+
+  if (typeof error.message === "string" && error.message.trim()) {
+    return error.message.trim();
+  }
+
+  return String(error);
 }
