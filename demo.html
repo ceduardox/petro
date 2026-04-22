@@ -59,7 +59,7 @@
     <main class="demo-main-page">
       <section class="hero demo-hero" id="top">
         <div class="container demo-hero-grid">
-          <div class="demo-hero-copy">
+          <div class="demo-hero-copy" data-demo-reveal>
             <p class="eyebrow">Interactive Product Demo</p>
             <h1>
               See PetroSphere in
@@ -71,6 +71,11 @@
               four screens below to understand how the platform looks in daily
               production, decline and optimization work.
             </p>
+
+            <div class="demo-hero-meta">
+              <span class="demo-live-pill">Demo mode live</span>
+              <span class="demo-key-hint">Use click, touch or keyboard arrows</span>
+            </div>
 
             <ul class="hero-points" aria-label="Demo highlights">
               <li>No sign-in required</li>
@@ -88,7 +93,7 @@
             </div>
           </div>
 
-          <aside class="demo-hero-card">
+          <aside class="demo-hero-card" data-demo-reveal>
             <p class="demo-card-label">Sample Workspace</p>
             <h2>Monteverde Gas Block</h2>
             <div class="demo-chip-row">
@@ -147,6 +152,26 @@
                 <strong>Optimization</strong>
                 <small>Bottlenecks, lift notes and action tracking.</small>
               </button>
+
+              <div class="demo-nav-footer">
+                <div class="demo-progress">
+                  <span class="demo-progress-label">
+                    Step <b data-demo-step-current>1</b> of <b data-demo-step-total>4</b>
+                  </span>
+                  <div class="demo-progress-track">
+                    <span class="demo-progress-fill" data-demo-progress-fill></span>
+                  </div>
+                </div>
+
+                <div class="demo-nav-controls">
+                  <button class="button button-ghost demo-control-button" type="button" data-demo-prev>
+                    Previous
+                  </button>
+                  <button class="button button-primary demo-control-button" type="button" data-demo-next>
+                    Next
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div class="demo-stage-shell">
@@ -579,15 +604,15 @@
           </div>
 
           <div class="demo-feature-grid">
-            <article class="demo-feature-card">
+            <article class="demo-feature-card" data-demo-reveal>
               <h3>Data Imports</h3>
               <p>Bring in production, tests, PVT and pressure history by CSV, XLSX or connectors depending on plan.</p>
             </article>
-            <article class="demo-feature-card">
+            <article class="demo-feature-card" data-demo-reveal>
               <h3>Team Access</h3>
               <p>Control who can view, edit or export data by workspace, asset and engineering role.</p>
             </article>
-            <article class="demo-feature-card">
+            <article class="demo-feature-card" data-demo-reveal>
               <h3>Saved Cases</h3>
               <p>Keep decline cases, nodal assumptions, notes and reporting views in one place instead of separate spreadsheets.</p>
             </article>
@@ -597,7 +622,7 @@
 
       <section class="section" id="next">
         <div class="container">
-          <div class="demo-cta-panel">
+          <div class="demo-cta-panel" data-demo-reveal>
             <p class="eyebrow">Next Step</p>
             <h2>If this sample looks useful, the live product is ready for your own assets.</h2>
             <p>

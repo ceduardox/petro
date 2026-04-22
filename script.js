@@ -333,21 +333,76 @@ function setupExpandableImages() {
 function setupDemoPage() {
   const navButtons = document.querySelectorAll("[data-demo-nav]");
   const panels = document.querySelectorAll("[data-demo-panel]");
+  const previousButton = document.querySelector("[data-demo-prev]");
+  const nextButton = document.querySelector("[data-demo-next]");
+  const currentStepTarget = document.querySelector("[data-demo-step-current]");
+  const totalStepsTarget = document.querySelector("[data-demo-step-total]");
+  const progressFill = document.querySelector("[data-demo-progress-fill]");
+  const revealTargets = document.querySelectorAll("[data-demo-reveal]");
 
   if (!navButtons.length || !panels.length) {
     return;
   }
 
+  body.classList.add("is-enhanced");
+
+  const steps = Array.from(navButtons).map((button) => button.getAttribute("data-demo-nav"));
+  let activeStep = steps[0];
+
+  if (totalStepsTarget) {
+    totalStepsTarget.textContent = String(steps.length);
+  }
+
+  const updateProgress = (index) => {
+    const oneBasedIndex = index + 1;
+
+    if (currentStepTarget) {
+      currentStepTarget.textContent = String(oneBasedIndex);
+    }
+
+    if (progressFill) {
+      progressFill.style.width = `${(oneBasedIndex / steps.length) * 100}%`;
+    }
+
+    if (previousButton) {
+      previousButton.disabled = index === 0;
+    }
+
+    if (nextButton) {
+      nextButton.disabled = index === steps.length - 1;
+      nextButton.textContent = index === steps.length - 1 ? "Done" : "Next";
+    }
+  };
+
   const setActiveStep = (step) => {
+    activeStep = step;
+    const stepIndex = steps.indexOf(step);
+
     navButtons.forEach((button) => {
       const isActive = button.getAttribute("data-demo-nav") === step;
       button.classList.toggle("is-active", isActive);
       button.setAttribute("aria-selected", String(isActive));
+
+      if (isActive) {
+        button.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "nearest",
+        });
+      }
     });
 
     panels.forEach((panel) => {
-      panel.hidden = panel.getAttribute("data-demo-panel") !== step;
+      const isActive = panel.getAttribute("data-demo-panel") === step;
+      panel.hidden = !isActive;
+      panel.classList.toggle("is-visible", isActive);
     });
+
+    updateProgress(stepIndex);
+
+    const nextUrl = new URL(window.location.href);
+    nextUrl.searchParams.set("step", step);
+    window.history.replaceState({}, "", nextUrl);
   };
 
   navButtons.forEach((button) => {
@@ -359,6 +414,23 @@ function setupDemoPage() {
     });
   });
 
+  previousButton?.addEventListener("click", () => {
+    const currentIndex = steps.indexOf(activeStep);
+    if (currentIndex > 0) {
+      setActiveStep(steps[currentIndex - 1]);
+    }
+  });
+
+  nextButton?.addEventListener("click", () => {
+    const currentIndex = steps.indexOf(activeStep);
+    if (currentIndex < steps.length - 1) {
+      setActiveStep(steps[currentIndex + 1]);
+      return;
+    }
+
+    window.location.href = "#workflows";
+  });
+
   const params = new URLSearchParams(window.location.search);
   const requestedStep = params.get("step");
   const defaultStep = navButtons[0]?.getAttribute("data-demo-nav");
@@ -367,4 +439,50 @@ function setupDemoPage() {
   );
 
   setActiveStep(hasRequestedStep ? requestedStep : defaultStep);
+
+  const handleKeyNavigation = (event) => {
+    const isTypingTarget = ["INPUT", "TEXTAREA", "SELECT"].includes(
+      document.activeElement?.tagName || ""
+    );
+
+    if (isTypingTarget) {
+      return;
+    }
+
+    if (event.key === "ArrowRight") {
+      const currentIndex = steps.indexOf(activeStep);
+      if (currentIndex < steps.length - 1) {
+        setActiveStep(steps[currentIndex + 1]);
+      }
+    }
+
+    if (event.key === "ArrowLeft") {
+      const currentIndex = steps.indexOf(activeStep);
+      if (currentIndex > 0) {
+        setActiveStep(steps[currentIndex - 1]);
+      }
+    }
+  };
+
+  document.addEventListener("keydown", handleKeyNavigation);
+
+  if (revealTargets.length && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.14,
+      }
+    );
+
+    revealTargets.forEach((target) => observer.observe(target));
+  } else {
+    revealTargets.forEach((target) => target.classList.add("is-visible"));
+  }
 }
