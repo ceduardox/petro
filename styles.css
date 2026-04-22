@@ -1879,6 +1879,15 @@ main,
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.system-link-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.system-link-heading {
+  margin-top: 38px;
+}
+
 .product-step-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -1898,6 +1907,14 @@ main,
 .detail-card p,
 .step-card p {
   margin-top: 12px;
+}
+
+.card-action-row {
+  margin-top: 20px;
+}
+
+.card-action-row .button {
+  width: 100%;
 }
 
 .detail-list {
