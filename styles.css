@@ -767,25 +767,55 @@ main,
   gap: 18px;
 }
 
+.team-photo-button {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.team-photo-button:hover .team-avatar,
+.team-photo-button:focus-visible .team-avatar {
+  transform: translateY(-2px) scale(1.02);
+}
+
 .team-avatar {
-  display: grid;
-  place-items: center;
+  display: block;
   width: 128px;
   height: 128px;
   border-radius: 999px;
   border: 4px solid rgba(255, 255, 255, 0.92);
-  background:
-    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.9), transparent 24%),
-    linear-gradient(135deg, #6a7f9f 0%, #253c6b 42%, #0a1630 100%);
+  object-fit: cover;
+  object-position: center 22%;
   box-shadow: 0 22px 44px rgba(10, 27, 57, 0.18);
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.team-avatar span {
+.team-photo-button:focus-visible {
+  outline: 3px solid rgba(53, 212, 58, 0.38);
+  outline-offset: 8px;
+}
+
+.team-photo-hint {
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  background: rgba(8, 16, 33, 0.72);
   color: #ffffff;
-  font-family: "Space Grotesk", "Segoe UI", sans-serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: -0.06em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 0 14px 28px rgba(8, 16, 33, 0.18);
 }
 
 .team-badges {
@@ -898,6 +928,81 @@ main,
 .network-panel p {
   max-width: 780px;
   margin: 12px auto 0;
+}
+
+.image-modal-open {
+  overflow: hidden;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.image-modal[hidden] {
+  display: none;
+}
+
+.image-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(59, 198, 66, 0.14), transparent 34%),
+    rgba(7, 15, 31, 0.78);
+  backdrop-filter: blur(10px);
+}
+
+.image-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 720px);
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+  background: rgba(8, 16, 33, 0.88);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.35);
+}
+
+.image-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 90px;
+  margin-left: auto;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.image-modal-close:hover,
+.image-modal-close:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.image-modal-title {
+  margin: 18px 0 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.image-modal-image {
+  display: block;
+  width: 100%;
+  max-height: 76vh;
+  object-fit: contain;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .product-page .site-header {
@@ -1603,6 +1708,10 @@ td {
     align-items: center;
   }
 
+  .team-photo-hint {
+    bottom: -14px;
+  }
+
   .team-content {
     text-align: left;
   }
@@ -1693,6 +1802,25 @@ td {
   .team-avatar {
     width: 110px;
     height: 110px;
+  }
+
+  .team-photo-hint {
+    font-size: 0.68rem;
+  }
+
+  .image-modal {
+    padding: 14px;
+  }
+
+  .image-modal-dialog {
+    width: min(100%, 560px);
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .image-modal-image {
+    max-height: 70vh;
+    border-radius: 18px;
   }
 
   .footer-inner {

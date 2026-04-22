@@ -685,9 +685,24 @@
 
           <div class="team-card">
             <aside class="team-sidebar">
-              <div class="team-avatar" aria-hidden="true">
-                <span>CMS</span>
-              </div>
+              <button
+                class="team-photo-button"
+                type="button"
+                aria-label="Expand portrait of Ciro E. Miranda Segovia"
+                aria-haspopup="dialog"
+                data-image-expand
+                data-image-src="assets/ciro.jpg"
+                data-image-alt="Portrait of Ciro E. Miranda Segovia"
+              >
+                <img
+                  class="team-avatar"
+                  src="assets/ciro.jpg"
+                  alt="Ciro E. Miranda Segovia"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <span class="team-photo-hint">View photo</span>
+              </button>
               <div class="team-badges">
                 <span>25 Years</span>
                 <span>SPE Member</span>
@@ -789,6 +804,27 @@
         <p>Built for production, nodal and reserve workflows.</p>
       </div>
     </footer>
+
+    <div class="image-modal" data-image-modal hidden>
+      <div class="image-modal-backdrop" data-image-modal-close></div>
+      <div
+        class="image-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="image-modal-title"
+      >
+        <button
+          class="image-modal-close"
+          type="button"
+          aria-label="Close expanded portrait"
+          data-image-modal-close
+        >
+          Close
+        </button>
+        <p class="image-modal-title" id="image-modal-title">Ciro E. Miranda Segovia</p>
+        <img class="image-modal-image" src="" alt="" data-image-modal-image>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

@@ -21,6 +21,7 @@ bindQueryParamValues();
 setupAuthForms();
 setupDashboardPage();
 setupStripeCheckoutButtons();
+setupExpandableImages();
 
 function bindQueryParamValues() {
   const queryTargets = document.querySelectorAll("[data-query-param]");
@@ -271,5 +272,59 @@ async function setupStripeCheckoutButtons() {
         button.textContent = originalLabel;
       }
     });
+  });
+}
+
+function setupExpandableImages() {
+  const triggers = document.querySelectorAll("[data-image-expand]");
+  const modal = document.querySelector("[data-image-modal]");
+  const modalImage = document.querySelector("[data-image-modal-image]");
+  const closeButtons = document.querySelectorAll("[data-image-modal-close]");
+  const primaryCloseButton = closeButtons[0];
+
+  if (!triggers.length || !modal || !modalImage) {
+    return;
+  }
+
+  let activeTrigger = null;
+
+  const closeModal = () => {
+    modal.hidden = true;
+    body.classList.remove("image-modal-open");
+    modalImage.src = "";
+    modalImage.alt = "";
+
+    if (activeTrigger) {
+      activeTrigger.focus();
+      activeTrigger = null;
+    }
+  };
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const src = trigger.getAttribute("data-image-src");
+      const alt = trigger.getAttribute("data-image-alt") || "";
+
+      if (!src) {
+        return;
+      }
+
+      activeTrigger = trigger;
+      modalImage.src = src;
+      modalImage.alt = alt;
+      modal.hidden = false;
+      body.classList.add("image-modal-open");
+      primaryCloseButton?.focus();
+    });
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
   });
 }
