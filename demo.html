@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetroSphere Demo | Sample Reservoir Workspace</title>
+    <meta
+      name="description"
+      content="Explore a short PetroSphere product demo with sample production, decline and optimization workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="demo-page">
+    <div class="page-glow page-glow-one"></div>
+    <div class="page-glow page-glow-two"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Petrosphere home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">PETROSPHERE</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="header-menu"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="header-menu" id="header-menu">
+          <nav class="site-nav" aria-label="Primary">
+            <a href="#workspace">Workspace</a>
+            <a href="#workflows">Workflows</a>
+            <a href="#next">Next Steps</a>
+            <a href="index.html#packages">Pricing</a>
+            <a href="index.html#faq">FAQ</a>
+          </nav>
+
+          <div class="header-actions">
+            <a class="button button-secondary" href="index.html">Back to Site</a>
+            <a class="button button-primary" href="index.html#packages">See Pricing</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="demo-main-page">
+      <section class="hero demo-hero" id="top">
+        <div class="container demo-hero-grid">
+          <div class="demo-hero-copy">
+            <p class="eyebrow">Interactive Product Demo</p>
+            <h1>
+              See PetroSphere in
+              <span>one short sample workspace</span>
+            </h1>
+            <p class="hero-copy">
+              This is a guided product demo with fictitious field data. No login,
+              no registration and no real client information. Move through the
+              four screens below to understand how the platform looks in daily
+              production, decline and optimization work.
+            </p>
+
+            <ul class="hero-points" aria-label="Demo highlights">
+              <li>No sign-in required</li>
+              <li>Sample asset and well data</li>
+              <li>Short product tour in under 3 minutes</li>
+            </ul>
+
+            <div class="hero-actions">
+              <a class="button button-primary button-large" href="#workspace">
+                Start Demo
+              </a>
+              <a class="button button-secondary button-large" href="index.html#packages">
+                See Pricing
+              </a>
+            </div>
+          </div>
+
+          <aside class="demo-hero-card">
+            <p class="demo-card-label">Sample Workspace</p>
+            <h2>Monteverde Gas Block</h2>
+            <div class="demo-chip-row">
+              <span>18 active wells</span>
+              <span>Gas + condensate</span>
+              <span>Last update: today</span>
+            </div>
+            <div class="demo-hero-stats">
+              <article>
+                <strong>12.8</strong>
+                <span>MMscf/d current rate</span>
+              </article>
+              <article>
+                <strong>4.7%</strong>
+                <span>quarterly decline</span>
+              </article>
+              <article>
+                <strong>3</strong>
+                <span>priority alerts</span>
+              </article>
+            </div>
+            <p class="demo-disclaimer">
+              Demo data is illustrative only. The live platform supports your
+              own wells, asset structures, users and reporting templates.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section demo-workspace" id="workspace">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Short Tour</p>
+            <h2>Move through the workflow that most buyers want to understand first.</h2>
+          </div>
+
+          <div class="demo-main-grid">
+            <div class="demo-stage-nav" role="tablist" aria-label="Demo workflow">
+              <button class="demo-nav-button is-active" id="demo-tab-overview" role="tab" type="button" data-demo-nav="overview" aria-selected="true" aria-controls="demo-panel-overview">
+                <span class="demo-nav-step">01</span>
+                <strong>Asset Overview</strong>
+                <small>Production status, portfolio metrics and alerts.</small>
+              </button>
+              <button class="demo-nav-button" id="demo-tab-well" role="tab" type="button" data-demo-nav="well" aria-selected="false" aria-controls="demo-panel-well">
+                <span class="demo-nav-step">02</span>
+                <strong>Well Detail</strong>
+                <small>History, pressure context and current performance.</small>
+              </button>
+              <button class="demo-nav-button" id="demo-tab-decline" role="tab" type="button" data-demo-nav="decline" aria-selected="false" aria-controls="demo-panel-decline">
+                <span class="demo-nav-step">03</span>
+                <strong>Decline Case</strong>
+                <small>Saved forecast assumptions and reserve-style views.</small>
+              </button>
+              <button class="demo-nav-button" id="demo-tab-optimize" role="tab" type="button" data-demo-nav="optimize" aria-selected="false" aria-controls="demo-panel-optimize">
+                <span class="demo-nav-step">04</span>
+                <strong>Optimization</strong>
+                <small>Bottlenecks, lift notes and action tracking.</small>
+              </button>
+            </div>
+
+            <div class="demo-stage-shell">
+              <article class="demo-stage-panel" id="demo-panel-overview" role="tabpanel" aria-labelledby="demo-tab-overview" data-demo-panel="overview">
+                <div class="demo-window">
+                  <div class="demo-window-bar">
+                    <span class="demo-window-dot"></span>
+                    <span class="demo-window-dot"></span>
+                    <span class="demo-window-dot"></span>
+                    <p>Asset dashboard / Monteverde Gas Block</p>
+                  </div>
+
+                  <div class="demo-metric-strip">
+                    <article class="demo-kpi-card">
+                      <span>Active wells</span>
+                      <strong>18</strong>
+                      <small>16 flowing, 2 intermittent</small>
+                    </article>
+                    <article class="demo-kpi-card">
+                      <span>Gas rate</span>
+                      <strong>12.8</strong>
+                      <small>MMscf/d live total</small>
+                    </article>
+                    <article class="demo-kpi-card">
+                      <span>Condensate</span>
+                      <strong>1,140</strong>
+                      <small>bbl/d equivalent</small>
+                    </article>
+                    <article class="demo-kpi-card">
+                      <span>Open alerts</span>
+                      <strong>3</strong>
+                      <small>2 performance, 1 test due</small>
+                    </article>
+                  </div>
+
+                  <div class="demo-panel-grid demo-panel-grid-wide">
+                    <section class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Production trend</p>
+                          <h3>Last 12 months</h3>
+                        </div>
+                        <span>MMscf/d</span>
+                      </div>
+                      <svg class="demo-chart" viewBox="0 0 640 240" aria-hidden="true">
+                        <defs>
+                          <linearGradient id="demoLineFillA" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="0%" stop-color="rgba(54,209,42,0.28)"></stop>
+                            <stop offset="100%" stop-color="rgba(54,209,42,0)"></stop>
+                          </linearGradient>
+                        </defs>
+                        <path d="M40 190 C110 178, 140 168, 190 158 S290 132, 340 136 S420 145, 470 118 S560 76, 600 70" fill="none" stroke="#27bf22" stroke-width="6" stroke-linecap="round"></path>
+                        <path d="M40 190 C110 178, 140 168, 190 158 S290 132, 340 136 S420 145, 470 118 S560 76, 600 70 L600 220 L40 220 Z" fill="url(#demoLineFillA)"></path>
+                        <path d="M40 210 H610" stroke="rgba(8,26,58,0.12)" stroke-width="2"></path>
+                        <path d="M40 150 H610" stroke="rgba(8,26,58,0.08)" stroke-width="2" stroke-dasharray="6 8"></path>
+                        <path d="M40 95 H610" stroke="rgba(8,26,58,0.08)" stroke-width="2" stroke-dasharray="6 8"></path>
+                        <circle cx="600" cy="70" r="8" fill="#27bf22"></circle>
+                      </svg>
+                    </section>
+
+                    <aside class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Alert queue</p>
+                          <h3>Needs review today</h3>
+                        </div>
+                      </div>
+                      <ul class="demo-alert-list">
+                        <li>
+                          <strong>MV-07</strong>
+                          <span>Rate down 11% vs trailing average.</span>
+                        </li>
+                        <li>
+                          <strong>MV-12</strong>
+                          <span>Separator pressure drift flagged.</span>
+                        </li>
+                        <li>
+                          <strong>MV-03</strong>
+                          <span>Pressure test window due in 6 days.</span>
+                        </li>
+                      </ul>
+                    </aside>
+                  </div>
+
+                  <div class="demo-panel-grid">
+                    <section class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Top wells</p>
+                          <h3>Current contributors</h3>
+                        </div>
+                      </div>
+                      <div class="demo-table">
+                        <div class="demo-table-row demo-table-head">
+                          <span>Well</span>
+                          <span>Rate</span>
+                          <span>Status</span>
+                        </div>
+                        <div class="demo-table-row">
+                          <span>MV-04</span>
+                          <span>1.84 MMscf/d</span>
+                          <span>Stable</span>
+                        </div>
+                        <div class="demo-table-row">
+                          <span>MV-07</span>
+                          <span>1.36 MMscf/d</span>
+                          <span>Alert</span>
+                        </div>
+                        <div class="demo-table-row">
+                          <span>MV-12</span>
+                          <span>1.18 MMscf/d</span>
+                          <span>Review</span>
+                        </div>
+                      </div>
+                    </section>
+
+                    <section class="demo-note-card">
+                      <p class="demo-note-label">Operator note</p>
+                      <h3>What this screen answers</h3>
+                      <p>
+                        Where is production moving, which wells need attention
+                        and what changed since the last reporting cycle.
+                      </p>
+                    </section>
+                  </div>
+                </div>
+              </article>
+
+              <article class="demo-stage-panel" id="demo-panel-well" role="tabpanel" aria-labelledby="demo-tab-well" data-demo-panel="well" hidden>
+                <div class="demo-window">
+                  <div class="demo-window-bar">
+                    <span class="demo-window-dot"></span>
+                    <span class="demo-window-dot"></span>
+                    <span class="demo-window-dot"></span>
+                    <p>Well page / MV-07</p>
+                  </div>
+
+                  <div class="demo-detail-header">
+                    <div>
+                      <p class="demo-card-label">Well detail</p>
+                      <h3>MV-07 / gas producer</h3>
+                    </div>
+                    <div class="demo-chip-row">
+                      <span>Current status: flagged</span>
+                      <span>ESP: no</span>
+                      <span>Lift: natural flow</span>
+                    </div>
+                  </div>
+
+                  <div class="demo-metric-strip">
+                    <article class="demo-kpi-card">
+                      <span>Current rate</span>
+                      <strong>1.36</strong>
+                      <small>MMscf/d</small>
+                    </article>
+                    <article class="demo-kpi-card">
+                      <span>WHP</span>
+                      <strong>1,940</strong>
+                      <small>psi live reading</small>
+                    </article>
+                    <article class="demo-kpi-card">
+                      <span>Last test</span>
+                      <strong>18</strong>
+                      <small>days ago</small>
+                    </article>
+                    <article class="demo-kpi-card">
+                      <span>Deviation</span>
+                      <strong>-11%</strong>
+                      <small>vs 30-day baseline</small>
+                    </article>
+                  </div>
+
+                  <div class="demo-panel-grid demo-panel-grid-wide">
+                    <section class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Performance history</p>
+                          <h3>Rate and pressure</h3>
+                        </div>
+                      </div>
+                      <svg class="demo-chart" viewBox="0 0 640 240" aria-hidden="true">
+                        <path d="M40 150 C90 152, 120 145, 170 148 S250 160, 300 170 S390 178, 430 174 S520 152, 600 160" fill="none" stroke="#27bf22" stroke-width="5" stroke-linecap="round"></path>
+                        <path d="M40 80 C90 82, 120 89, 170 95 S250 105, 300 112 S390 122, 430 130 S520 148, 600 138" fill="none" stroke="#5f78ff" stroke-width="4" stroke-dasharray="8 10" stroke-linecap="round"></path>
+                        <path d="M40 210 H610" stroke="rgba(8,26,58,0.12)" stroke-width="2"></path>
+                        <path d="M40 110 H610" stroke="rgba(8,26,58,0.08)" stroke-width="2" stroke-dasharray="6 8"></path>
+                        <path d="M40 60 H610" stroke="rgba(8,26,58,0.08)" stroke-width="2" stroke-dasharray="6 8"></path>
+                      </svg>
+                    </section>
+
+                    <section class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Context</p>
+                          <h3>Quick review</h3>
+                        </div>
+                      </div>
+                      <div class="demo-parameter-list">
+                        <div><span>Last pressure build-up</span><strong>Valid</strong></div>
+                        <div><span>Skin trend</span><strong>Stable</strong></div>
+                        <div><span>Tubing sensitivity</span><strong>High</strong></div>
+                        <div><span>Recommended next step</span><strong>Check choke + separator pressure</strong></div>
+                      </div>
+                    </section>
+                  </div>
+
+                  <div class="demo-panel-grid">
+                    <section class="demo-note-card">
+                      <p class="demo-note-label">Operator note</p>
+                      <h3>What this screen answers</h3>
+                      <p>
+                        Is the underperformance likely coming from reservoir
+                        behavior, surface conditions or a routine operating
+                        constraint.
+                      </p>
+                    </section>
+
+                    <section class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Recent events</p>
+                          <h3>Timeline</h3>
+                        </div>
+                      </div>
+                      <ul class="demo-timeline">
+                        <li><strong>Apr 14</strong><span>Separator pressure drift detected.</span></li>
+                        <li><strong>Apr 10</strong><span>Routine surveillance note added by production engineer.</span></li>
+                        <li><strong>Apr 04</strong><span>Well test imported and benchmark refreshed.</span></li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </article>
+
+              <article class="demo-stage-panel" id="demo-panel-decline" role="tabpanel" aria-labelledby="demo-tab-decline" data-demo-panel="decline" hidden>
+                <div class="demo-window">
+                  <div class="demo-window-bar">
+                    <span class="demo-window-dot"></span>
+                    <span class="demo-window-dot"></span>
+                    <span class="demo-window-dot"></span>
+                    <p>Decline workspace / MV-07 forecast</p>
+                  </div>
+
+                  <div class="demo-detail-header">
+                    <div>
+                      <p class="demo-card-label">Saved forecast case</p>
+                      <h3>Base decline vs optimized scenario</h3>
+                    </div>
+                    <div class="demo-chip-row">
+                      <span>Model: hyperbolic</span>
+                      <span>History window: 18 months</span>
+                      <span>EUR view enabled</span>
+                    </div>
+                  </div>
+
+                  <div class="demo-panel-grid demo-panel-grid-wide">
+                    <section class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Forecast chart</p>
+                          <h3>History + scenario envelope</h3>
+                        </div>
+                      </div>
+                      <svg class="demo-chart" viewBox="0 0 640 240" aria-hidden="true">
+                        <path d="M40 120 C100 122, 130 128, 180 134 S260 150, 310 162 S390 174, 440 184 S530 194, 600 202" fill="none" stroke="#172a5f" stroke-width="5" stroke-linecap="round"></path>
+                        <path d="M310 162 C370 155, 410 150, 470 145 S550 140, 600 135" fill="none" stroke="#27bf22" stroke-width="5" stroke-linecap="round"></path>
+                        <path d="M310 162 C370 168, 410 172, 470 180 S550 196, 600 206" fill="none" stroke="#92a0bd" stroke-width="4" stroke-dasharray="8 10" stroke-linecap="round"></path>
+                        <path d="M40 210 H610" stroke="rgba(8,26,58,0.12)" stroke-width="2"></path>
+                        <path d="M40 150 H610" stroke="rgba(8,26,58,0.08)" stroke-width="2" stroke-dasharray="6 8"></path>
+                        <path d="M310 40 V210" stroke="rgba(39,191,34,0.22)" stroke-width="2" stroke-dasharray="8 8"></path>
+                      </svg>
+                    </section>
+
+                    <section class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Case assumptions</p>
+                          <h3>Base scenario</h3>
+                        </div>
+                      </div>
+                      <div class="demo-parameter-list">
+                        <div><span>qi</span><strong>1.52 MMscf/d</strong></div>
+                        <div><span>Di</span><strong>4.7% / quarter</strong></div>
+                        <div><span>b factor</span><strong>0.84</strong></div>
+                        <div><span>EUR</span><strong>16.4 Bscf</strong></div>
+                      </div>
+                    </section>
+                  </div>
+
+                  <div class="demo-panel-grid">
+                    <section class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Scenario comparison</p>
+                          <h3>Expected uplift</h3>
+                        </div>
+                      </div>
+                      <div class="demo-scenario-grid">
+                        <article>
+                          <span>Base case</span>
+                          <strong>16.4 Bscf</strong>
+                          <small>Current operating mode</small>
+                        </article>
+                        <article>
+                          <span>Optimized choke</span>
+                          <strong>17.9 Bscf</strong>
+                          <small>+9.1% EUR potential</small>
+                        </article>
+                        <article>
+                          <span>Deferred intervention</span>
+                          <strong>15.8 Bscf</strong>
+                          <small>Higher downside risk</small>
+                        </article>
+                      </div>
+                    </section>
+
+                    <section class="demo-note-card">
+                      <p class="demo-note-label">Operator note</p>
+                      <h3>What this screen answers</h3>
+                      <p>
+                        Which forecast is saved, what assumptions are behind it
+                        and how much upside a specific operating change might
+                        add.
+                      </p>
+                    </section>
+                  </div>
+                </div>
+              </article>
+
+              <article class="demo-stage-panel" id="demo-panel-optimize" role="tabpanel" aria-labelledby="demo-tab-optimize" data-demo-panel="optimize" hidden>
+                <div class="demo-window">
+                  <div class="demo-window-bar">
+                    <span class="demo-window-dot"></span>
+                    <span class="demo-window-dot"></span>
+                    <span class="demo-window-dot"></span>
+                    <p>Optimization board / MV-07</p>
+                  </div>
+
+                  <div class="demo-detail-header">
+                    <div>
+                      <p class="demo-card-label">Action center</p>
+                      <h3>Constraint diagnosis and next steps</h3>
+                    </div>
+                    <div class="demo-chip-row">
+                      <span>Priority: high</span>
+                      <span>Estimated uplift: +0.12 MMscf/d</span>
+                      <span>Owner: production team</span>
+                    </div>
+                  </div>
+
+                  <div class="demo-panel-grid demo-panel-grid-wide">
+                    <section class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Constraint map</p>
+                          <h3>Most likely bottlenecks</h3>
+                        </div>
+                      </div>
+                      <div class="demo-bar-list">
+                        <div><span>Separator pressure drift</span><b style="width: 82%"></b></div>
+                        <div><span>Choke setting mismatch</span><b style="width: 68%"></b></div>
+                        <div><span>Tubing friction sensitivity</span><b style="width: 55%"></b></div>
+                        <div><span>Reservoir deterioration</span><b style="width: 24%"></b></div>
+                      </div>
+                    </section>
+
+                    <section class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Recommended actions</p>
+                          <h3>Next 72 hours</h3>
+                        </div>
+                      </div>
+                      <ul class="demo-action-list">
+                        <li>Validate separator pressure instrumentation.</li>
+                        <li>Compare live choke setting against last accepted nodal case.</li>
+                        <li>Run quick sensitivity with lower separator pressure target.</li>
+                        <li>Reforecast after intervention note is closed.</li>
+                      </ul>
+                    </section>
+                  </div>
+
+                  <div class="demo-panel-grid">
+                    <section class="demo-card">
+                      <div class="demo-card-head">
+                        <div>
+                          <p class="demo-card-label">Business impact</p>
+                          <h3>Estimated outcome</h3>
+                        </div>
+                      </div>
+                      <div class="demo-scenario-grid">
+                        <article>
+                          <span>Incremental rate</span>
+                          <strong>+0.12</strong>
+                          <small>MMscf/d</small>
+                        </article>
+                        <article>
+                          <span>Expected payback</span>
+                          <strong>7 days</strong>
+                          <small>Low-cost operating fix</small>
+                        </article>
+                        <article>
+                          <span>Confidence</span>
+                          <strong>Medium</strong>
+                          <small>Requires field validation</small>
+                        </article>
+                      </div>
+                    </section>
+
+                    <section class="demo-note-card">
+                      <p class="demo-note-label">Operator note</p>
+                      <h3>What this screen answers</h3>
+                      <p>
+                        What to do next, who owns the task and whether the
+                        expected uplift justifies the intervention.
+                      </p>
+                    </section>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="workflows">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">What The Full Product Adds</p>
+            <h2>The demo is short. The production system goes deeper.</h2>
+          </div>
+
+          <div class="demo-feature-grid">
+            <article class="demo-feature-card">
+              <h3>Data Imports</h3>
+              <p>Bring in production, tests, PVT and pressure history by CSV, XLSX or connectors depending on plan.</p>
+            </article>
+            <article class="demo-feature-card">
+              <h3>Team Access</h3>
+              <p>Control who can view, edit or export data by workspace, asset and engineering role.</p>
+            </article>
+            <article class="demo-feature-card">
+              <h3>Saved Cases</h3>
+              <p>Keep decline cases, nodal assumptions, notes and reporting views in one place instead of separate spreadsheets.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="next">
+        <div class="container">
+          <div class="demo-cta-panel">
+            <p class="eyebrow">Next Step</p>
+            <h2>If this sample looks useful, the live product is ready for your own assets.</h2>
+            <p>
+              Start with a plan, load your internal data and move from sample
+              dashboards to a real engineering workspace.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary button-large" href="index.html#packages">
+                See Pricing
+              </a>
+              <a class="button button-secondary button-large" href="pro.html">
+                Explore Pro Plan
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Petrosphere sample demo.</p>
+        <p>Illustrative data only. Built for production, nodal and reserve workflows.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

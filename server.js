@@ -24,6 +24,7 @@ const ROUTE_ALIASES = {
   "/enterprise": "/enterprise.html",
   "/auth": "/auth.html",
   "/dashboard": "/dashboard.html",
+  "/demo": "/demo.html",
   "/success": "/success.html",
   "/cancel": "/cancel.html",
 };

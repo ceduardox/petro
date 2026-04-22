@@ -22,6 +22,7 @@ setupAuthForms();
 setupDashboardPage();
 setupStripeCheckoutButtons();
 setupExpandableImages();
+setupDemoPage();
 
 function bindQueryParamValues() {
   const queryTargets = document.querySelectorAll("[data-query-param]");
@@ -327,4 +328,43 @@ function setupExpandableImages() {
       closeModal();
     }
   });
+}
+
+function setupDemoPage() {
+  const navButtons = document.querySelectorAll("[data-demo-nav]");
+  const panels = document.querySelectorAll("[data-demo-panel]");
+
+  if (!navButtons.length || !panels.length) {
+    return;
+  }
+
+  const setActiveStep = (step) => {
+    navButtons.forEach((button) => {
+      const isActive = button.getAttribute("data-demo-nav") === step;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-selected", String(isActive));
+    });
+
+    panels.forEach((panel) => {
+      panel.hidden = panel.getAttribute("data-demo-panel") !== step;
+    });
+  };
+
+  navButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const step = button.getAttribute("data-demo-nav");
+      if (step) {
+        setActiveStep(step);
+      }
+    });
+  });
+
+  const params = new URLSearchParams(window.location.search);
+  const requestedStep = params.get("step");
+  const defaultStep = navButtons[0]?.getAttribute("data-demo-nav");
+  const hasRequestedStep = Array.from(navButtons).some(
+    (button) => button.getAttribute("data-demo-nav") === requestedStep
+  );
+
+  setActiveStep(hasRequestedStep ? requestedStep : defaultStep);
 }
